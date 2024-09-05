@@ -1,0 +1,15 @@
+﻿fastapi
+psycopg2-binary
+elasticsearch
+uvicorn
+python-dotenv
+sqlalchemy
+pydantic
+pydantic[email]
+passlib
+bcrypt
+python-jose
+pre-commit
+python-multipart
+requests
+jinja2

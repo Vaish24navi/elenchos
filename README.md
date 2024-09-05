@@ -1,6 +1,6 @@
 ## Welcome to the Elenchos Docs!
 
-Elencho is an authentication system for multi-tenant SaaS powered with FastAPI, PostgreSQL, and JWT. It is designed to be used as a base for any SaaS project, and can be easily integrated with any frontend framework.
+Elenchos is an authentication system for multi-tenant SaaS powered with FastAPI, PostgreSQL, and JWT. It is designed to be used as a base for any SaaS project, and can be easily integrated with any frontend framework.
 
 ## Contents
 
@@ -83,7 +83,7 @@ class User(Base):
 ## API Documentation
 
 Swagger UI can be used to test the API. It is available at `http://localhost:8000/docs`.
-Additionally, check the [API Postman Documentation](/docs_assets/postman.json) with examples, and sample requests.
+Additionally, check the [API Postman Documentation](/docs_assets/postman_collection.json) with examples, and sample requests.
 
 
 ## Setup

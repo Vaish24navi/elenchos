@@ -123,11 +123,11 @@ Also, to trigger the mailing system, `BackgroundTasks` are used in FastAPI. The 
 
 ### Email triggered on sign-in
 
-![Sign-in Email](/docs_assets/login.png)
+![Sign-in Email](/docs_assets/src/login.png)
 
 ### Email triggered on password reset
 
-![Password Reset Email](/docs_assets/reset.png)
+![Password Reset Email](/docs_assets/src/reset.png)
 
 ## Invitation
 
@@ -135,7 +135,7 @@ The users can also invite other users to join their organisation. The invitation
 
 ### Email triggered on member invitation
 
-![Invitation Email](/docs_assets/invite.png)
+![Invitation Email](/docs_assets/src/invite.png)
 
 ## Statistics
 

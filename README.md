@@ -83,7 +83,7 @@ class User(Base):
 ## API Documentation
 
 Swagger UI can be used to test the API. It is available at `http://localhost:8000/docs`.
-Additionally, check the [API Postman Documentation](/docs_assets/postman_collection.json) with examples, and sample requests.
+Additionally, check the [API Postman Documentation](/doc_assets/postman_collection.json) with examples, and sample requests.
 
 
 ## Setup
@@ -123,11 +123,11 @@ Also, to trigger the mailing system, `BackgroundTasks` are used in FastAPI. The 
 
 ### Email triggered on sign-in
 
-![Sign-in Email](/docs_assets/src/login.png)
+![Sign-in Email](/doc_assets/src/login.png)
 
 ### Email triggered on password reset
 
-![Password Reset Email](/docs_assets/src/reset.png)
+![Password Reset Email](/doc_assets/src/reset.png)
 
 ## Invitation
 
@@ -135,7 +135,7 @@ The users can also invite other users to join their organisation. The invitation
 
 ### Email triggered on member invitation
 
-![Invitation Email](/docs_assets/src/invite.png)
+![Invitation Email](/doc_assets/src/invite.png)
 
 ## Statistics
 

@@ -16,7 +16,7 @@ from app.core.utils.errors import not_found_error, unauthorized_error
 from app.core.utils.middlewares import authenticate_user
 from app.core.utils.mailers import send_invite_email
 from app.core.utils.dependencies import save_and_refresh
-
+from app.core.utils.cron import schedule_email
 
 router = APIRouter(
     dependencies=[Depends(authenticate_user)],
@@ -26,7 +26,6 @@ router = APIRouter(
 
 @router.post("/send", status_code= status.HTTP_200_OK)
 async def send_invite(
-    background_tasks: BackgroundTasks,
     request: Request,
     payload: InviteMember, 
     db: Session = Depends(get_db)
@@ -63,7 +62,11 @@ async def send_invite(
 
     invite_token = create_invite_token(payload.recipient_mail, invite.id)
 
-    background_tasks.add_task(send_invite_email,payload.recipient_mail, invite_token)
+    schedule_time = datetime.utcnow() + timedelta(minutes=10)
+    schedule_email(payload.recipient_mail,
+     "Invite to join organisation", 
+     f"Click the link to join the organisation: http://localhost:8000/invitations/accept?invite_id={invite_token}", 
+     schedule_time)
 
     return {"message": f"Invite sent to {payload.recipient_mail}"}
 

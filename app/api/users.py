@@ -43,7 +43,7 @@ async def reset_password(
     db.commit()
     db.refresh(existing_user)
 
-    background_tasks.add_task(send_update_pwd_email, payload.email)
+    background_tasks.add_task(send_update_pwd_email, existing_user.email)
 
     return {
         "message": "User password reset successfully"

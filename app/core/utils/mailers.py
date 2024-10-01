@@ -3,6 +3,8 @@ import smtplib
 from dotenv import load_dotenv
 from email.mime.text import MIMEText
 from jinja2 import Environment, FileSystemLoader
+from celery import shared_task
+
 
 load_dotenv()
 
@@ -37,7 +39,7 @@ def render_template(template_name, context):
     env = Environment(loader=FileSystemLoader('app/mailer'))
     template = env.get_template(template_name)
     return template.render(context)
-    
+
 def send_email(recipient_email, subject, html_content):
     """
     Send email via SMTP.
@@ -69,7 +71,6 @@ def send_email(recipient_email, subject, html_content):
     except Exception as e:
         print(f"Failed to send email: {e}")
 
-
 def send_login_email(recipient_email):
     """
     Send email that the user is logged in via SMTP.
@@ -79,7 +80,7 @@ def send_login_email(recipient_email):
     """
     html_content = read_html_file("app/mailer/signin.html")
     send_email(recipient_email, "You are signed in to Elencho!", html_content)
-    
+
 def send_update_pwd_email(recipient_email):
     """
     Send email that the user updated password via SMTP.
@@ -90,6 +91,7 @@ def send_update_pwd_email(recipient_email):
     html_content = read_html_file("app/mailer/change_pwd.html")
     send_email(recipient_email, "Password Reset Detected!", html_content)
 
+@shared_task
 def send_invite_email(recipient_email, invite_id):
     """
     Send email that the user is invited to join the organization via SMTP.
@@ -105,4 +107,12 @@ def send_invite_email(recipient_email, invite_id):
     html_content = render_template("invite.html", context)
 
     send_email(recipient_email, "You are invited to join Elencho!", html_content)
+
+
+
+
+
+
+
+
     

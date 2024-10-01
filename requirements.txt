@@ -13,3 +13,6 @@ pre-commit
 python-multipart
 requests
 jinja2
+celery
+redis
+apscheduler

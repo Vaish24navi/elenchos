@@ -1,6 +1,6 @@
 ## Welcome to the Elenchos Docs!
 
-Elencho is an authentication system for multi-tenant SaaS powered with FastAPI, PostgreSQL, and JWT. It is designed to be used as a base for any SaaS project, and can be easily integrated with any frontend framework.
+Elenchos is an authentication system for multi-tenant SaaS powered with FastAPI, PostgreSQL, and JWT. It is designed to be used as a base for any SaaS project, and can be easily integrated with any frontend framework.
 
 ## Contents
 
@@ -85,7 +85,7 @@ class User(Base):
 ## API Documentation
 
 Swagger UI can be used to test the API. It is available at `http://localhost:8000/docs`.
-Additionally, check the [API Postman Documentation](/docs_assets/postman.json) with examples, and sample requests.
+Additionally, check the [API Postman Documentation](/doc_assets/postman_collection.json) with examples, and sample requests.
 
 
 ## Setup
@@ -125,11 +125,19 @@ Also, to trigger the mailing system, `BackgroundTasks` are used in FastAPI. The 
 
 ### Email triggered on sign-in
 
+
 ![Sign-in Email](/docs_assets/login.png)
 
 ### Email triggered on password reset
 
 ![Password Reset Email](/docs_assets/reset.png)
+
+![Sign-in Email](/doc_assets/src/login.png)
+
+### Email triggered on password reset
+
+![Password Reset Email](/doc_assets/src/reset.png)
+
 
 ## Invitation
 
@@ -139,7 +147,9 @@ The invitation system uses Celery to send the invitation emails asynchronously. 
 
 ### Email triggered on member invitation
 
-![Invitation Email](/docs_assets/invite.png)
+
+![Invitation Email](/doc_assets/src/invite.png)
+
 
 ## Statistics
 

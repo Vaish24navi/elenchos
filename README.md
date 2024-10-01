@@ -24,7 +24,9 @@ Elencho is an authentication system for multi-tenant SaaS powered with FastAPI, 
 - [Pydantic](https://pydantic-docs.helpmanual.io/)
 - [JWT](https://jwt.io/)
 - [smtplib](https://docs.python.org/3/library/smtplib.html)
-
+- [Celery](https://docs.celeryproject.org/en/stable/)
+- [Redis](https://redis.io/)
+- [APScheduler](https://apscheduler.readthedocs.io/en/stable/)
 
 ### Frontend
 
@@ -132,6 +134,8 @@ Also, to trigger the mailing system, `BackgroundTasks` are used in FastAPI. The 
 ## Invitation
 
 The users can also invite other users to join their organisation. The invitation system is designed to be secure and flexible, and can be easily extended to add more features, and configurations.
+
+The invitation system uses Celery to send the invitation emails asynchronously. The system is designed to be scalable and can be easily integrated with any other task queue system.
 
 ### Email triggered on member invitation
 
